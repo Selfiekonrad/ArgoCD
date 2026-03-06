@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: native-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: native-app
+  template:
+    metadata:
+      labels:
+        app: native-app
+    spec:
+      containers:
+      - name: app
+        image: demo:0.0.1-SNAPSHOT 
+        imagePullPolicy: Never              
+        ports:
+        - containerPort: 8080
