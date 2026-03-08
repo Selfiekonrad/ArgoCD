@@ -14,7 +14,23 @@ spec:
     spec:
       containers:
       - name: app
-        image: demo:0.0.1-SNAPSHOT 
+        image: demo:0.0.2-SNAPSHOT
         imagePullPolicy: Never              
         ports:
         - containerPort: 8080
+        env:
+          - name: ME_CONFIG_MONGODB_SERVER
+            valueFrom:
+              configMapKeyRef:
+                name: mongodb-configmap
+                key: database_url
+          - name: MONGO_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                key: mongo-root-username
+                name: mongodb-secret
+          - name: MONGO_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: mongo-root-password
+                name: mongodb-secret
