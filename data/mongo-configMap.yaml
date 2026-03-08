@@ -4,4 +4,4 @@ metadata:
   name: mongodb-configmap
   namespace: default
 data:
-  database_url: mongo-db-service.database.svc.cluster.local
+  database_url: mongo-db-service
