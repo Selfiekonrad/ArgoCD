@@ -15,7 +15,7 @@ spec:
       containers:
       - name: app
         image: demo:0.0.3-SNAPSHOT
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
         env:
