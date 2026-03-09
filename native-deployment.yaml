@@ -36,3 +36,5 @@ spec:
                 name: mongodb-secret
           - name: SPRING_MONGODB_DATABASE
             value: "user-db"
+          - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
+            value: "admin"
