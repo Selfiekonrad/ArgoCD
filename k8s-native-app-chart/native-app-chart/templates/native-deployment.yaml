@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: native-app
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: native-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: demo:0.0.4-SNAPSHOT
+        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -35,6 +35,6 @@ spec:
                 key: mongo-root-password
                 name: mongodb-secret
           - name: SPRING_MONGODB_DATABASE
-            value: "user-db"
+            value: {{ .Values.mongo.database }}
           - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
-            value: "admin"
+            value: {{ .Values.mongo.authDb }}

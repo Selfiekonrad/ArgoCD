@@ -4,4 +4,4 @@ metadata:
   name: mongodb-configmap
   namespace: default
 data:
-  database_url: mongo-db-service
+  database_url: "{{ .Values.mongo.host }}"

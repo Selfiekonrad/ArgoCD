@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  name: demo
+  tag: 0.0.4-SNAPSHOT
+
+mongo:
+  host: mongo-db-service
+  database: user-db
+  authDb: admin
