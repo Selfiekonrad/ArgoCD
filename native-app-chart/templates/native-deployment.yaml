@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: native-app
 spec:
-  replicas: {{ .Values.replicaCount }}
+
   selector:
     matchLabels:
       app: native-app
@@ -14,10 +14,16 @@ spec:
     spec:
       containers:
       - name: app
-        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+        image: {{ .Values.native.image.name }}:{{ .Values.native.image.tag }}
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: {{ .Values.native.container.containerPort }}
+        resources:
+          requests:
+            cpu: 1m
+          limits:
+            cpu: 3m
+
         env:
           - name: SPRING_MONGODB_HOST
             valueFrom:

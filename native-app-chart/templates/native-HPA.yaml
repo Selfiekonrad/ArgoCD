@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: native-app-hpa
+spec:
+  minReplicas: {{ .Values.native_hpa.spec.minReplicas }}
+  maxReplicas: {{ .Values.native_hpa.spec.maxReplicas }}
+  scaleTargetRef:
+    kind: Deployment
+    name: native-app
+  targetCPUUtilizationPercentage: {{ .Values.native_hpa.spec.targetCPUUtilizationPercentage }}

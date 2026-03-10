@@ -1,7 +1,16 @@
-replicaCount: 1
-image:
-  name: demo
-  tag: 0.0.4-SNAPSHOT
+native:
+  replicaCount: 1
+  image:
+    name: demo
+    tag: 0.0.4-SNAPSHOT
+  container:
+    containerPort: 8080
+
+native_hpa:
+  spec:
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 20
 
 mongo:
   host: mongo-db-service
