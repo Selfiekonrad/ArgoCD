@@ -9,8 +9,8 @@ native:
 native_hpa:
   spec:
     minReplicas: 1
-    maxReplicas: 7
-    targetCPUUtilizationPercentage: 60
+    maxReplicas: 20
+    targetCPUUtilizationPercentage: 100
 
 mongo:
   host: mongo-db-service
