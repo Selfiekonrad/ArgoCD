@@ -20,9 +20,11 @@ spec:
         - containerPort: {{ .Values.native.container.containerPort }}
         resources:
           requests:
-            cpu: 1m
+            cpu: 100m
+            memory: 256Mi
           limits:
-            cpu: 3m
+            cpu: 500m
+            memory: 512Mi
 
         env:
           - name: SPRING_MONGODB_HOST
