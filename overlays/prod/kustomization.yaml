@@ -1,0 +1,23 @@
+resources:
+  - ../../base
+
+namespace: prod-namespace
+namePrefix: prod-
+
+labels:
+  - pairs:
+      env: prod
+    includeTemplates: true
+    includeSelectors: true
+
+configMapGenerator:
+  - name: app-config
+    literals:
+      - database_host=prod-mongodb-service
+      - database_name=prod-user-db
+
+secretGenerator:
+  - name: db-secret
+    literals:
+      - username=admin
+      - password=password

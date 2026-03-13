@@ -1,0 +1,14 @@
+resources:
+  - native-deployment.yaml
+  - native-service.yaml
+
+labels:
+  - pairs:
+      app: native-app
+    includeSelectors: true
+
+namePrefix:
+  custom-
+
+nameSuffix:
+  -v1

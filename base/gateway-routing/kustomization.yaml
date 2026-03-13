@@ -1,0 +1,3 @@
+resources:
+  - gateway-infra-gateaway.yaml
+  - httproute.yaml

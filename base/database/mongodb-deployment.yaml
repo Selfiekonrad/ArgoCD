@@ -2,17 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo-db-depl
-  labels:
-    app: mongo-db
 spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      app: mongo-db
+  replicas: 1
   template:
-    metadata:
-      labels:
-        app: mongo-db
     spec:
       containers:
         - name: mongo
@@ -23,10 +15,10 @@ spec:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
-                  key: mongo-root-username
-                  name: mongodb-secret
+                  name: db-secret
+                  key: username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: mongo-root-password
-                  name: mongodb-secret
+                  name: db-secret
+                  key: password

@@ -1,0 +1,13 @@
+resources:
+  - mongodb-deployment.yaml
+  - mongodb-service.yaml
+
+labels:
+  - pairs:
+      app: mongo-db
+    includeSelectors: true
+
+configMapGenerator:
+  - name: mongo-config-map
+    files:
+      - mongo.properties

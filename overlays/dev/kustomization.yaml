@@ -1,0 +1,22 @@
+resources:
+  - ../../base
+namePrefix: dev-
+
+labels:
+  - pairs:
+      env: dev
+      namespace: dev-namespace
+    includeSelectors: true
+    includeTemplates: true
+
+configMapGenerator:
+  - name: app-config
+    literals:
+      - database_host=dev-mongodb-service
+      - database_name=dev-user-db
+
+secretGenerator:
+  - name: db-secret
+    literals:
+      - username=admin
+      - password=password
