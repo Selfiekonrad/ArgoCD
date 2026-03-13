@@ -7,8 +7,5 @@ labels:
       app: native-app
     includeSelectors: true
 
-namePrefix:
-  custom-
-
 nameSuffix:
   -v1
