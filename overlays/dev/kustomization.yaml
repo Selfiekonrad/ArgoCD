@@ -1,11 +1,11 @@
 resources:
   - ../../base
+
 namePrefix: dev-
 
 labels:
   - pairs:
       env: dev
-      namespace: dev-namespace
     includeSelectors: true
     includeTemplates: true
 

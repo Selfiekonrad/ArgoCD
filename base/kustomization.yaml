@@ -2,3 +2,6 @@ resources:
   - database/
   - native-backend/
   - gateway-routing/
+
+configurations:
+  - kustomize-config.yaml
