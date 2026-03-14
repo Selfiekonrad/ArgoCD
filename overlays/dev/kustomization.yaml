@@ -3,6 +3,8 @@ resources:
 
 namePrefix: dev-
 
+namespace: dev-namespace
+
 labels:
   - pairs:
       env: dev
