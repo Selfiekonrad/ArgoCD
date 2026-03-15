@@ -5,6 +5,9 @@ namePrefix: dev-
 
 namespace: dev-namespace
 
+configurations:
+  - nameref.yaml
+
 labels:
   - pairs:
       env: dev
