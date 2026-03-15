@@ -2,6 +2,6 @@ nameReference:
   - kind: Gateway
     group: gateway.networking.k8s.io/v1
     fieldSpecs:
-      - path: spec/parentsRefs/name
+      - path: spec/parentRefs/name
         kind: HTTPRoute
         group: gateway.networking.k8s.io/v1
