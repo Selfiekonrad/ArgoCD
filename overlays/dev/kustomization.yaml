@@ -14,7 +14,7 @@ labels:
 configMapGenerator:
   - name: app-config
     literals:
-      - database_host=dev-mongodb-service
+      - database_host=dev-db-service
       - database_name=dev-user-db
 
 secretGenerator:

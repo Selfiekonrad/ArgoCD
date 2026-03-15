@@ -1,6 +1,6 @@
 resources:
-  - mongodb-deployment.yaml
-  - mongodb-service.yaml
+  - db-deployment.yaml
+  - db-service.yaml
 
 labels:
   - pairs:
