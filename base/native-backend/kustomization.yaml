@@ -1,6 +1,7 @@
 resources:
   - native-deployment.yaml
   - native-service.yaml
+  - native-daemonset.yaml
 
 labels:
   - pairs:
