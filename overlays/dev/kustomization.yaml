@@ -1,5 +1,6 @@
 resources:
   - ../../base
+  - dev-namespace.yaml
 
 namePrefix: dev-
 
