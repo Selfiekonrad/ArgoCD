@@ -5,6 +5,16 @@ metadata:
 spec:
   template:
     spec: #pod spec
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: topology.kubernetes.io/region
+                    operator: In
+                    values:
+                      - us-east-1
+                      - us-east-1
       containers:
       - name: app
         image: demo:0.0.4-SNAPSHOT
