@@ -14,7 +14,7 @@ spec:
                     operator: In
                     values:
                       - us-east-1
-                      - us-east-1
+                      - eu-west-1
       containers:
       - name: app
         image: demo:0.0.4-SNAPSHOT
