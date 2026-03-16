@@ -11,10 +11,9 @@ spec:
             nodeSelectorTerms:
               - matchExpressions:
                   - key: topology.kubernetes.io/region
-                    operator: In
+                    operator: NotIn
                     values:
                       - us-east-1
-                      - eu-west-1
       containers:
       - name: app
         image: demo:0.0.4-SNAPSHOT
