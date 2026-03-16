@@ -4,3 +4,7 @@ metadata:
   name: native-pdb
 spec:
   minAvailable: 4
+  selector:
+    matchLabels:
+      app: native-app
+      env: dev
