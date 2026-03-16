@@ -35,3 +35,9 @@ spec:
                 key: password
           - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
             value: admin
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: actuator/health/readiness
+          initialDelaySeconds: 20
+          periodSeconds: 10
