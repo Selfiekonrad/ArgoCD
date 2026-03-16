@@ -26,3 +26,6 @@ secretGenerator:
     literals:
       - username=admin
       - password=password
+
+patches:
+  - path: patch-affinity.yaml
